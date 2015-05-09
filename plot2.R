@@ -1,15 +1,15 @@
 # -------------------------------------------------------------------
-# FILE: plot1.R
+# FILE: plot2.R
 # Course: Exploratory Data Analysis
 # Project: 1
 #
-# R script to generate the first plot for the project.
+# R script to generate the second plot for the project.
 #
 # To run this script you will need to have the project data file 
 # household_power_consumption.txt in your working directory and
 # have your working directory set properly. Setting the working_dir
 # variable should be the only change needed. The plot generated,
-# plot1.png, too will be in the working directory.
+# plot2.png, too will be in the working directory.
 #
 # Required packages: dplyr and lubridate
 #
@@ -65,15 +65,15 @@ hpc$datetime = dmy_hms(paste(hpc$date, hpc$time))
 # generate PNG plot
 #
 # open graphics device
-png("plot1.png",
+png("plot2.png",
     width = 480,
     height = 480)
 
 # generate the plot
-hist(hpc$globalactivepower,
-     col = "RED",
-     xlab = "Global Active Power (kilowatts)",
-     main = "Global Active Power")
+plot(hpc$datetime,hpc$globalactivepower,
+     type = "l",
+     xlab = "",
+     ylab = "Global Active Power (kilowatts)")
 
 # close graphics device
 dev.off()
